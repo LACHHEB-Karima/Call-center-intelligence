@@ -48,7 +48,7 @@ Provide management with an immediate overview of:
 
 Analyze performance by:
 
-* Campaign
+* Country
 * Channel
 * Issue
 * Date
@@ -94,7 +94,6 @@ The current report is organized into five main analytical areas:
 4. **Voice Agents Performance**
 5. **Email Agents Performance**
 
-> **Trace agents are currently outside the scope of the Power BI report and will be excluded from the final reporting model.**
 
 ---
 
@@ -145,7 +144,6 @@ The Operations page focuses on workload and service performance.
 * Answered Rate %
 * Abandonment Rate %
 * Average Wait Time
-* Average Answer Speed
 * Average Handling Time
 
 ### Main analyses
@@ -165,7 +163,7 @@ Provides visibility into the relative contribution of:
 * Voice
 * Email
 
-#### Volume by campaign
+#### Volume by country
 
 Allows managers to understand where operational workload is concentrated.
 
@@ -210,7 +208,7 @@ The dashboard therefore does not only present the overall CSAT value. It investi
 
 Customer satisfaction can be analyzed by:
 
-* Campaign
+* Country
 * Channel
 * Issue
 * Date
@@ -252,7 +250,7 @@ This provides a bridge between customer feedback and operational root-cause anal
 
 A detailed review table allows managers to inspect individual feedback and connect ratings with:
 
-* Campaign
+* Country
 * Channel
 * Issue
 * Date
@@ -276,8 +274,7 @@ This page focuses on individual agent performance and workforce behavior.
 * Productivity %
 * Occupancy %
 * CSAT %
-* Agents Above Target
-* Agents Requiring Coaching
+* Resolution %
 
 ### Agent performance analysis
 
@@ -290,28 +287,12 @@ Key indicators include:
 * Interaction volume
 * Productivity
 * Occupancy
-* AUX behavior
 
 This allows managers to distinguish between different performance situations.
 
 For example:
 
 > An agent with high AHT and low CSAT represents a different development case from an agent with high AHT but strong customer satisfaction.
-
----
-
-## AHT vs CSAT Analysis
-
-A scatter plot is used to compare:
-
-**X-axis:** Average Handling Time
-**Y-axis:** CSAT %
-
-**Bubble size:** Interaction volume
-
-This provides a more analytical view of agent performance.
-
-It helps highlight agents who differ significantly from the broader population and allows managers to investigate whether high handling time is associated with weaker customer satisfaction.
 
 ---
 
@@ -394,9 +375,9 @@ The analysis allows Team Managers to investigate performance at both operational
 
 The report includes interactive slicers allowing managers to analyze performance dynamically.
 
-### Campaign
+### Country
 
-Filter the report by campaign, including the operational markets covered by the project.
+Filter the report by country, including the operational markets covered by the project.
 
 ### Channel
 
@@ -483,10 +464,10 @@ The reporting layer uses DAX measures for dynamic KPI calculations.
 Examples include:
 
 * Total Interactions
+* Total Reviews
 * Answered Rate %
 * Average Handling Time
 * CSAT %
-* Review Rate %
 * Productivity %
 * Occupancy %
 * Working Time
@@ -498,7 +479,7 @@ Measures are designed to respond dynamically to the report's filter context.
 For example, selecting:
 
 ```text
-Campaign → France
+Country → France
 Channel  → Voice
 Issue    → Delivery
 Period   → Q1 2026
@@ -522,7 +503,7 @@ However, the dashboard does not stop at identifying the low CSAT.
 
 The next analytical questions are:
 
-* Which campaigns are contributing most to the issue?
+* Which countries are contributing most to the issue?
 * Which customer issues have the lowest satisfaction?
 * Is the problem concentrated in specific channels?
 * Are certain agents significant outliers?
